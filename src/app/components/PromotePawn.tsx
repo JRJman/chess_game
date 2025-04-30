@@ -30,10 +30,17 @@ const PromotePawn = (props: MadeMovesListProps) => {
           refreshSelection();
         }}
       >
-        <img
-          src={"images/pieces/" + piece.color + "/" + pieceInfo.image}
-          alt=""
-        />
+        <div
+          className="piece"
+          style={{
+            background:
+              "url('images/pieces/" +
+              piece.color +
+              "/" +
+              pieceInfo.image +
+              "')",
+          }}
+        ></div>
       </div>
     ));
   };

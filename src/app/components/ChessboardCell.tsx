@@ -70,10 +70,16 @@ const ChessboardCell = (props: ChessboardCellProps) => {
         ((color === Colors.Black && row === Rows.One) ||
           (color === Colors.White && row === Rows.Eight))
       ) {
-        return <PromotePawn chessboard={chessboard} piece={piece} refreshSelection={refreshSelection} />;
+        return (
+          <PromotePawn
+            chessboard={chessboard}
+            piece={piece}
+            refreshSelection={refreshSelection}
+          />
+        );
       }
 
-      return <img src={image} alt="Piece" />;
+      return <div className="piece" style={{ background: "url('" + image + "')" }}></div>;
     } else if (canMoveToSquare()) {
       return <div className="dot"></div>;
     }

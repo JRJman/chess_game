@@ -105,30 +105,32 @@ const Chessboard = () => {
   };
 
   return (
-    <div className="chessboard-container">
-      <div className="chessboard">
-        {isPromoting ? <div className="promoting-piece"></div> : <></>}
+    <main>
+      <div className="chessboard-container">
+        <div className="chessboard">
+          {isPromoting ? <div className="promoting-piece"></div> : <></>}
 
-        {rows.map((row, index) => {
-          return createRow(row, index);
-        })}
-
-        <div className="chessboard-row">
-          <div className="chessboard-column-character"></div>
-          {columns.map((column) => {
-            return (
-              <div
-                key={"column-" + column}
-                className="chessboard-column-character"
-              >
-                {column}
-              </div>
-            );
+          {rows.map((row, index) => {
+            return createRow(row, index);
           })}
+
+          <div className="chessboard-row">
+            <div className="chessboard-column-character"></div>
+            {columns.map((column) => {
+              return (
+                <div
+                  key={"column-" + column}
+                  className="chessboard-column-character"
+                >
+                  {column}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
       <MadeMovesList chessboard={CHESSBOARD} />
-    </div>
+    </main>
   );
 };
 
